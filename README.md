@@ -1,5 +1,9 @@
 # FormularioPro
 
+<https://formulariopro-efrathewolf.streamlit.app/>
+
+**Aplicación publicada:** [Abrir FormularioPro](https://formulariopro-efrathewolf.streamlit.app/) · [Código fuente](https://github.com/efrathewolf/FormularioPro)
+
 **Sistema dinámico de captura, consulta y administración de registros con fotografías e historial.**
 
 FormularioPro convierte una hoja de cálculo CSV o Excel en un formulario de captura sin tener que programar cada campo. Está desarrollado con Python, Streamlit, Pandas y SQLite.
@@ -16,20 +20,15 @@ FormularioPro convierte una hoja de cálculo CSV o Excel en un formulario de cap
 - Exportar información a CSV, Excel, JSON y ZIP con fotografías.
 - Guardar la información en una base de datos SQLite local al entorno donde se ejecuta.
 
-## Ponerlo en funcionamiento (recomendado: Streamlit Community Cloud)
+## Aplicación en línea
 
-GitHub almacena el código; **no ejecuta la aplicación**. GitHub Pages sirve páginas estáticas y no puede ejecutar este programa Python. Para publicar la aplicación en internet:
+La aplicación está publicada en Streamlit Community Cloud:
 
-1. Comprueba que este repositorio sea público: [efrathewolf/FormularioPro](https://github.com/efrathewolf/FormularioPro).
-2. Entra a [Streamlit Community Cloud](https://share.streamlit.io/) e inicia sesión con GitHub.
-3. Autoriza el acceso a GitHub si la plataforma lo solicita.
-4. Selecciona **Create app** / **Deploy an app**.
-5. Elige el repositorio `efrathewolf/FormularioPro`, la rama `main` y el archivo principal `main.py`.
-6. En **Advanced settings**, selecciona una versión de Python compatible (Python 3.11 recomendado).
-7. Pulsa **Deploy**. Streamlit instalará las dependencias de `requirements.txt`.
-8. Cuando termine el despliegue, abre la URL que te proporcione Streamlit.
+**[https://formulariopro-efrathewolf.streamlit.app/](https://formulariopro-efrathewolf.streamlit.app/)**
 
-Si Streamlit solicita configuración adicional, conserva el archivo principal como `main.py` y revisa los registros de despliegue para identificar el error concreto.
+El código fuente y la configuración de despliegue están en este repositorio. Streamlit Community Cloud utiliza el archivo `main.py` como punto de entrada y `requirements.txt` para instalar las dependencias. Los cambios que se envían a la rama `main` se reflejan en la aplicación después del proceso de actualización de Streamlit.
+
+Para administrar el despliegue, iniciar sesión en [Streamlit Community Cloud](https://share.streamlit.io/) con la cuenta de GitHub que tiene acceso al repositorio. Desde el panel se pueden consultar los registros (logs), reiniciar la aplicación y administrar sus opciones.
 
 ## Cómo utilizar FormularioPro
 
@@ -90,6 +89,8 @@ Descarga respaldos periódicamente y guárdalos en un lugar seguro.
 
 ## Privacidad, almacenamiento y límites importantes
 
+**Aviso importante para la versión publicada:** la aplicación utiliza SQLite y guarda imágenes en el disco local del proceso. En Streamlit Community Cloud ese disco no es un sistema de almacenamiento persistente garantizado. Los datos podrían perderse al reiniciar o recrear el entorno. Antes de usarla con registros reales, descarga respaldos desde la pestaña **Exportar** y conserva copias fuera de la aplicación. Para operación continua se debe integrar una base de datos y almacenamiento persistentes.
+
 - La aplicación no requiere una API externa para sus funciones básicas.
 - La base SQLite (`captura.db`) y las imágenes (`images/`) se guardan en el sistema de archivos del entorno donde corre la app.
 - En servicios de alojamiento en la nube, el almacenamiento local puede ser efímero y no debe considerarse un respaldo permanente. Antes de usar datos reales, confirma las condiciones de persistencia del alojamiento y conserva exportaciones externas.
@@ -139,7 +140,7 @@ FormularioPro/
 ├── .gitignore              # Archivos locales excluidos de Git
 └── .streamlit/
     └── config.toml         # Configuración visual de Streamlit
-``
+```
 
 ## Soporte y mejoras
 
