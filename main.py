@@ -198,8 +198,9 @@ def render_ficha(skey, pk, tipos, hist_cols):
 # ============================================================
 # UI principal
 # ============================================================
-st.set_page_config(page_title="Captura Dinámica Persistente", layout="wide")
-st.title("📋 Captura Dinámica con Fotos, Persistencia e Historial by efrathewolf, www.degdl.com")
+st.set_page_config(page_title="FormularioPro", page_icon="📋", layout="wide")
+st.title("📋 FormularioPro")
+st.caption("Captura dinámica de datos · Fotografías · Historial · Búsqueda · Exportación")
 
 uploaded = st.file_uploader("📁 Carga tu archivo CSV o XLSX", type=["csv", "xlsx"])
 
